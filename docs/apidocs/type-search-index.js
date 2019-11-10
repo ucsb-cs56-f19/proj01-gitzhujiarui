@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"Application","h":"","u":""},{"l":"AuthControllerAdvice","h":"","u":""},{"l":"GithubOrgMembershipService","h":"","u":""},{"l":"MembershipService","h":"","u":""},{"l":"WebController","h":"","u":""},{"l":"所有类","h":"","u":"allclasses-index.html"}]
