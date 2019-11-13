@@ -1,6 +1,9 @@
 https://ucsb-cs56-f19.github.io/lab07-gitzhujiarui/
 
 
+https://cs56-f19-lab07-gitzhujiarui.herokuapp.com/
+
+
 A simple Spring Boot webapp using:
 * Thymeleaf templating
 * Pulling in Bootstrap from CDN.
