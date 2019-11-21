@@ -27,20 +27,22 @@
 
       <h2> Results</h2>
 
-      <table>
+      <table class="table">
           <thead>
               <tr>
-                  <th>Type</th>
-                  <th>Url</th>
+                  <th>Title</th>
                   <th>Count</th>
+                  <th>Distance(km)</th>
+                  <th>Minmag(Minimum Magnitude)</th>
               </tr>
           </thead>
           <tbody>
               <tr>
-                  <td th:text="${featureCollection.type}"></td>
-                  <td th:text="${featureCollection.metadata.title}"></td>
-                  <td th:text="${featureCollection.metadata.url}"></td>
+                  <!-- <td th:text="${featureCollection.metadata.title}"></td> -->
+                  <td><a th:href="${featureCollection.metadata.url}" th:text="${featureCollection.metadata.title}"></a></td>
                   <td th:text="${featureCollection.metadata.count}"></td>
+                  <td th:text="${eqSearch.distance}"></td>
+                  <td th:text="${eqSearch.minmag}"></td>
               </tr>
           </tbody>
       </table>
