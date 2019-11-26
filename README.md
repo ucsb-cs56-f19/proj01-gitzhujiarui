@@ -1,4 +1,4 @@
-github pages:https://github.com/ucsb-cs56-f19/lab07-gitzhujiarui
+github page:https://github.com/ucsb-cs56-f19/lab07-gitzhujiarui
 
 Jacadoc and Jacoco report: https://ucsb-cs56-f19.github.io/lab07-gitzhujiarui/
 
