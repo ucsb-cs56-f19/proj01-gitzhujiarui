@@ -1,7 +1,10 @@
-https://ucsb-cs56-f19.github.io/lab07-gitzhujiarui/
+github pages:https://ucsb-cs56-f19.github.io/lab07-gitzhujiarui/
 
+Jacadoc and Jacoco report: https://ucsb-cs56-f19.github.io/lab07-gitzhujiarui/
 
-https://cs56-f19-lab07-gitzhujiarui.herokuapp.com/
+Heroku: https://cs56-f19-lab07-gitzhujiarui.herokuapp.com/
+
+TravisCI: https://travis-ci.org/ucsb-cs56-f19/lab07-gitzhujiarui
 
 
 A simple Spring Boot webapp using:
