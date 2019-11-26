@@ -1,6 +1,4 @@
 package hello;
-
-// import static org.hamcrest.Matchers.equalTo;
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
