@@ -1,4 +1,8 @@
-package hello;
+package hello.controllers;
+import hello.*;
+// import hello.Application;
+// import hello.EarthquakeQuerryService;
+// import hello.EqSearch
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -19,7 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(WebController.class)
+@WebMvcTest(HomeController.class)
 // @SpringBootTest
 // @AutoConfigureMockMvc
 public class HomePageTest {
