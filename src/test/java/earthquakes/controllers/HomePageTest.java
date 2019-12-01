@@ -1,5 +1,7 @@
 package earthquakes.controllers;
 import earthquakes.*;
+import earthquakes.controllers.HomeController;
+
 // import earthquakes.Application;
 // import earthquakes.EarthquakeQuerryService;
 // import earthquakes.EqSearch
@@ -79,15 +81,23 @@ public class HomePageTest {
     public void getHomePage_hasCorrectEarthquakes() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.TEXT_HTML))
                 .andExpect(status().isOk())
-                .andExpect(xpath("/html/body/div/nav/div/ul[1]/li[2]/a").exists())
-                .andExpect(xpath("/html/body/div/nav/div/ul[1]/li[2]/a").string("Earthquake Search"));
+                .andExpect(xpath("/html/body/div/nav/div/ul[1]/li[1]/a").exists())
+                .andExpect(xpath("/html/body/div/nav/div/ul[1]/li[1]/a").string("Earthquake Search"));
     }
 
     @Test
     public void getHomePage_hasCorrectUsers() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.TEXT_HTML))
                 .andExpect(status().isOk())
-                .andExpect(xpath("/html/body/div/nav/div/ul[1]/li[4]/a").exists())
-                .andExpect(xpath("/html/body/div/nav/div/ul[1]/li[4]/a").string("Users"));
+                .andExpect(xpath("/html/body/div/nav/div/ul[1]/li[3]/a").exists())
+                .andExpect(xpath("/html/body/div/nav/div/ul[1]/li[3]/a").string("Users"));
+    }
+
+    @Test
+    public void getHomePage_hasCorrectLocations() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.TEXT_HTML))
+                .andExpect(status().isOk())
+                .andExpect(xpath("/html/body/div/nav/div/ul[1]/li[2]/a").exists())
+                .andExpect(xpath("/html/body/div/nav/div/ul[1]/li[2]/a").string("Locations"));
     }
 }
