@@ -1,5 +1,5 @@
-package hello.controllers;
-import hello.*;
+package earthquakes.controllers;
+import earthquakes.*;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 

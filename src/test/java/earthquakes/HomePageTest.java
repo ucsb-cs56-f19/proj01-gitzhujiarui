@@ -1,8 +1,8 @@
-package hello.controllers;
-import hello.*;
-// import hello.Application;
-// import hello.EarthquakeQuerryService;
-// import hello.EqSearch
+package earthquakes.controllers;
+import earthquakes.*;
+// import earthquakes.Application;
+// import earthquakes.EarthquakeQuerryService;
+// import earthquakes.EqSearch
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
