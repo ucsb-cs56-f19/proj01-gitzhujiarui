@@ -1,6 +1,6 @@
 package hello.controllers;
 import hello.services.EarthquakeQueryService;
-import hello.EqSearch;
+import hello.searches.EqSearch;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
