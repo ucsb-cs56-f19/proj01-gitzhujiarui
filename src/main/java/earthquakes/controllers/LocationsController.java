@@ -1,4 +1,5 @@
 package earthquakes.controllers;
+import earthquakes.osm.PlaceCollection;
 import earthquakes.services.EarthquakeQueryService;
 import earthquakes.services.LocationQueryService;
 // import earthquakes.searches.EqSearch;
