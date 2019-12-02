@@ -21,12 +21,55 @@ import org.springframework.web.client.HttpClientErrorException;
 
 public class LocationQueryService {
 
-    private Logger logger = LoggerFactory.getLogger(EarthquakeQueryService.class);
+    private Logger logger = LoggerFactory.getLogger(LocationQueryService.class);
 
-    public String getJSON(String location) {
-        String fakeJson = "{ \"key\": \"value\" }";
-        String json = fakeJson;
-        logger.info("json=" + json);
-        return json;
+    // public String getJSON(String location) {
+    //     String fakeJson = "{ \"key\": \"value\" }";
+    //     String json = fakeJson;
+    //     logger.info("json=" + json);
+    //     return json;
+
+   
+
+        public String getJSON(String location) {
+        RestTemplate restTemplate = new RestTemplate();
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        HttpEntity<String> entity = new HttpEntity<>("body", headers);
+
+        String uri = "https://nominatim.openstreetmap.org/search/";
+        // String result = "";
+        // String space = " ";
+        // for (int i = 0; i < location.length(); i++) {
+        //     if (location.charAt(i) != space.charAt(0)) {
+        //         result += location.charAt(i);
+        //     } else {
+        //         result += "%20";
+        //     }
+        // }
+        
+        String params = String.format("?format=json", location);
+
+        String url = uri + location + params;
+        logger.info("url=" + url);
+
+        String retVal="";
+        try {   
+            ResponseEntity<String> re = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
+             MediaType contentType = re.getHeaders().getContentType();
+            HttpStatus statusCode = re.getStatusCode();
+            retVal = re.getBody();
+        } catch (HttpClientErrorException e) {
+            retVal = "{\"error\": \"401: Unauthorized\"}";
+        }
+        logger.info("from LocationQueryService.getJSON: " + retVal);
+        return retVal;
     }
+
+
+
+
 } 
