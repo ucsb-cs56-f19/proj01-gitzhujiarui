@@ -17,3 +17,5 @@ target
 # For Java
 *.class
 
+.DS_Store
+
