@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"hello","l":"BootstrapLiterals"},{"p":"hello","l":"EarthquakeSearchTest"},{"p":"hello","l":"HomePageTest"},{"p":"hello","l":"OAuthUtils"}]
+typeSearchIndex = [{"l":"BootstrapLiterals","h":"","u":""},{"l":"EarthquakeSearchTest","h":"","u":""},{"l":"HomePageTest","h":"","u":""},{"l":"OAuthUtils","h":"","u":""},{"l":"所有类","h":"","u":"allclasses-index.html"}]
