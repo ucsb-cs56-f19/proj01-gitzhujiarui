@@ -12,30 +12,32 @@
 
       <form action="#" th:action="@{/earthquakes/results}" th:object="${eqSearch}" method="get">
                  <table>
-                     <tr class="form-group">
-                         <th><label for="distance" class="col-form-label">Distance (km)</label></th>
-                         <td><input type="number" th:field="*{distance}" class="form-control" id="distance" /></td>
-                     </tr>
-                     <tr class="form-group">
-                         <th><label for="minmag" class="col-form-label">Minimum Magnitude</label></th>
-                         <td><input type="number" th:field="*{minmag}" class="form-control" id="minmag" /></td>
-                     </tr>
-                     <tr class="form-group">
-                      <th><label for="lat" class="col-form-label">latitude</label></th>
-                      <td><input type="number" step="any" th:field="*{lat}" class="form-control" id="lat" /></td>
-                     </tr>
-                     </tr>
-                      <tr class="form-group">
-                      <th><label for="lon" class="col-form-label">Longitude</label></th>
-                      <td><input type="number" step="any" th:field="*{lon}" class="form-control" id="lon" /></td>
-                     </tr>
-                     </tr>
-                      <tr class="form-group">
-                      <th><label for="location" class="col-form-label">location</label></th>
-                      <td><input type="text" th:field="*{location}" class="form-control" id="location" /></td>
-                    </tr>
-                 </table>
-     
+                  <tr class="form-group">
+                      <th><label for="distance" class="col-form-label">Distance (km)</label></th>
+                      <td><input type="number" th:field="*{distance}" class="form-control" id="distance" /></td>
+                  </tr>
+
+                  <tr class="form-group">
+                      <th><label for="minmag" class="col-form-label">Minimum Magnitude</label></th>
+                      <td><input type="number" th:field="*{minmag}" class="form-control" id="minmag" /></td>
+                  </tr>
+
+                  <tr class="form-group">
+                    <th><label for="lat" class="col-form-label">latitude</label></th>
+                    <td><input type="number" step="any" th:field="*{lat}" class="form-control" id="lat" /></td>
+                  </tr>
+
+                  <tr class="form-group">
+                    <th><label for="lon" class="col-form-label">Longitude</label></th>
+                    <td><input type="number" step="any" th:field="*{lon}" class="form-control" id="lon" /></td>
+                  </tr>
+
+                  <tr class="form-group">
+                    <th><label for="location" class="col-form-label">location</label></th>
+                    <td><input type="text" th:field="*{location}" class="form-control" id="location" /></td>
+                  </tr>
+              </table>
+              
                  <input type="submit" class="btn btn-primary" value="Search" />
              </form>
      
