@@ -23,11 +23,12 @@
         </thead>
         <tbody>
 
-            <tr th:each="l: ${locations}"> <td th:text="${l.id}"></td>
-                <td th:text="${l.placeId}"></td>
-                <td th:text="${l.name}"></td>
-                <td th:text="${l.latitude}"></td>
-                <td th:text="${l.longitude}"></td>
+            <tr th:each="l: ${locations}"> 
+              <td th:text="${l.id}"></td>
+              <td th:text="${l.placeId}"></td>
+              <td th:text="${l.name}"></td>
+              <td th:text="${l.latitude}"></td>
+              <td th:text="${l.longitude}"></td>
                 <!-- <td><a th:href="@{/earthquakes/search/(lat=${f.lat},lon=${f.lon},location=${f.display_name})}">Get Earthquakes</a></td> -->
             </tr>
         </tbody>

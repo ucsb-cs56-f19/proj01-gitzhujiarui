@@ -4,6 +4,7 @@ import earthquakes.osm.Place;
 import earthquakes.services.EarthquakeQueryService;
 import earthquakes.services.LocationQueryService;
 import earthquakes.searches.LocSearch;
+
 import earthquakes.entities.Location;
 import earthquakes.repositories.LocationRepository;
 
