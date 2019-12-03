@@ -23,25 +23,6 @@ public class EarthquakesController {
     @Autowired
     private ClientRegistrationRepository clientRegistrationRepository;
 
-    // @GetMapping("/")
-    // public String getHomepage(Model model, OAuth2AuthenticationToken oAuth2AuthenticationToken) {
-    //     return "index";
-    // }
-
-    // @GetMapping("/login")
-    // public String getLoginPage(Model model, OAuth2AuthenticationToken oAuth2AuthenticationToken) {
-
-    //     Map<String, String> urls = new HashMap<>();
-
-    //     // get around an unfortunate limitation of the API
-    //     @SuppressWarnings("unchecked") Iterable<ClientRegistration> iterable = ((Iterable<ClientRegistration>) clientRegistrationRepository);
-    //     iterable.forEach(clientRegistration -> urls.put(clientRegistration.getClientName(),
-    //             "/oauth2/authorization/" + clientRegistration.getRegistrationId()));
-
-    //     model.addAttribute("urls", urls);
-    //     return "login";
-    // }
-
     @GetMapping("/earthquakes/search")
     public String getEarthquakesSearch(Model model, OAuth2AuthenticationToken oAuth2AuthenticationToken,
             EqSearch eqSearch) {
@@ -56,7 +37,7 @@ public class EarthquakesController {
 
         model.addAttribute("eqSearch", eqSearch);
         
-        String json = e.getJSON(eqSearch.getDistance(), eqSearch.getMinmag());
+        String json = e.getJSON(eqSearch.getDistance(), eqSearch.getMinmag(), eqSearch.getLat(), eqSearch.getLon());
         model.addAttribute("json", json);
         FeatureCollection featureCollection = FeatureCollection.fromJSON(json);
         model.addAttribute("featureCollection",featureCollection);
