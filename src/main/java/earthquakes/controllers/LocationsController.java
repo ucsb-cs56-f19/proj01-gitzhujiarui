@@ -35,7 +35,7 @@ public class LocationsController {
     private LocationRepository locationRepository;
 
     @Autowired
-    public LocationsController(LocationRepository LocationRepository) {
+    public LocationsController(LocationRepository locationRepository) {
         this.locationRepository = locationRepository;   
     }
 
