@@ -68,11 +68,6 @@ public class LocationsController {
         String uid = getUid(token);
         Iterable<Location> locations = locationRepository.findByUid(uid);
         model.addAttribute("locations", locations);
-        // if (locations.size()==0) {
-        //     Location L = new Location();
-        //     L.setUid(uid);
-        //     locations.save(L);
-        // }
         return "locations/index";
     }
 
@@ -80,7 +75,7 @@ public class LocationsController {
     public String add(Location location, Model model, OAuth2AuthenticationToken token) {
       location.setUid(getUid(token));
       locationRepository.save(location);
-      model.addAttribute("locations", locationRepository.findAll());
+      model.addAttribute("locations", locationRepository.findByUid(getUid(token)));
       return "locations/index";
     }
 
