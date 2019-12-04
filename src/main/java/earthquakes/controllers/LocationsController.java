@@ -29,6 +29,10 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import earthquakes.geojson.FeatureCollection;
 
 import com.nimbusds.oauth2.sdk.client.ClientReadRequest;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
+import org.springframework.security.oauth2.core.user.OAuth2User;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+
 
 @Controller
 public class LocationsController {
@@ -60,14 +64,21 @@ public class LocationsController {
     }
 
    @GetMapping("/locations")
-    public String index(Model model) {
-        Iterable<Location> locations = locationRepository.findAll();
+    public String index(Model model, OAuth2AuthenticationToken token) {
+        String uid = getUid(token);
+        Iterable<Location> locations = locationRepository.findByUid(uid);
         model.addAttribute("locations", locations);
+        // if (locations.size()==0) {
+        //     Location L = new Location();
+        //     L.setUid(uid);
+        //     locations.save(L);
+        // }
         return "locations/index";
     }
 
     @PostMapping("/locations/add")
-    public String add(Location location, Model model) {
+    public String add(Location location, Model model, OAuth2AuthenticationToken token) {
+      location.setUid(getUid(token));
       locationRepository.save(location);
       model.addAttribute("locations", locationRepository.findAll());
       return "locations/index";
@@ -80,7 +91,21 @@ public class LocationsController {
     locationRepository.delete(location);
     model.addAttribute("locations", locationRepository.findAll());
     return "locations/index";
-}
+    }
+
+    public String getUid(OAuth2AuthenticationToken token){
+        if (token == null) return "";
+        String uid = token.getPrincipal().getAttributes().get("id").toString();
+        return uid;
+    }
+
+    @GetMapping("/Admin")
+    public String Admin(Model model, OAuth2AuthenticationToken token) {
+        String uid = getUid(token);
+        Iterable<Location> locations = locationRepository.findAll();
+        model.addAttribute("locations", locations);
+        return "locations/Admin";
+    }
 
 
 
